@@ -1,0 +1,63 @@
+{
+  "name": "compress-lexical",
+  "date": "2024-12-31T19:55:56.086Z",
+  "version": "1.0.0",
+  "results": [
+    {
+      "name": "LZW-Map",
+      "ops": 644.7,
+      "margin": 0.85,
+      "percentSlower": 87.34
+    },
+    {
+      "name": "LZW",
+      "ops": 488.97,
+      "margin": 0.87,
+      "percentSlower": 90.4
+    },
+    {
+      "name": "LZUTF8",
+      "ops": 1295.4,
+      "margin": 3.05,
+      "percentSlower": 74.56
+    },
+    {
+      "name": "LZJS",
+      "ops": 522.42,
+      "margin": 0.63,
+      "percentSlower": 89.74
+    },
+    {
+      "name": "LZUTF8_LIGHT",
+      "ops": 1454.2,
+      "margin": 1.46,
+      "percentSlower": 71.45
+    },
+    {
+      "name": "LZString",
+      "ops": 452.99,
+      "margin": 1,
+      "percentSlower": 91.11
+    },
+    {
+      "name": "Compatto",
+      "ops": 671.88,
+      "margin": 0.79,
+      "percentSlower": 86.81
+    },
+    {
+      "name": "SmolString",
+      "ops": 5092.8,
+      "margin": 0.41,
+      "percentSlower": 0
+    }
+  ],
+  "fastest": {
+    "name": "SmolString",
+    "index": 7
+  },
+  "slowest": {
+    "name": "LZString",
+    "index": 5
+  }
+}
