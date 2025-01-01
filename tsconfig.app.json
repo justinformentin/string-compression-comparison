@@ -22,5 +22,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src", "local-libs/lzw.js", "local-libs/lzw-map.js", "local-libs/lz-string.js"]
 }
