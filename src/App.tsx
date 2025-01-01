@@ -115,10 +115,12 @@ function Table({
   )
 }
 
+type LibSizeKey = keyof typeof libSizes
 function LibSizes() {
   console.log()
 
-  const keys = Object.keys(libSizes);
+  //@ts-ignore
+  const keys: LibSizeKey[] = Object.keys(libSizes)
   console.log('keys', keys)
   return (
     <div className="p-4">
@@ -126,7 +128,6 @@ function LibSizes() {
       <table className="mx-auto">
         <thead>
           <tr>
-            {/* <th></th> */}
             {keys.map((key) => (
               <th
                 key={key}
@@ -141,9 +142,7 @@ function LibSizes() {
         </thead>
         <tbody>
           <tr>
-            {/* <td></td> */}
             {keys.map((k) => {
-              console.log('libSizes[k].minified', libSizes[k].minified)
               return (
                 <td
                   key={libSizes[k].minified}
@@ -160,7 +159,7 @@ function LibSizes() {
   )
 }
 function App() {
-  const getSizeFileName = (n: string) => `${n} (${fileSizes?.[n]})`
+  const getSizeFileName = (n: keyof typeof fileSizes) => `${n} (${fileSizes?.[n]})`
 
   return (
     <div className="overflow-auto px-8">
@@ -177,6 +176,7 @@ function App() {
       />
       <Table
         title="Size (in bytes)"
+        // @ts-ignore
         getFileName={getSizeFileName}
         getValue={(item) => item.compressedLength}
       />

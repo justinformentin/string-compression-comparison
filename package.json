@@ -1,17 +1,19 @@
 {
-  "name": "indexeddb-test",
+  "name": "string-compression-comparison",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "0.0.1",
+  "homepage": "https://justinformentin.github.io/string-compression-comparison",
   "scripts": {
     "dev": "vite",
-    "vite-build": "tsc -b && vite build",
+    "build": "tsc -b && vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "lint": "eslint .",
     "preview": "vite preview",
     "speed": "node ./benchmarks/speed/index.js",
     "size": "node ./benchmarks/size/index.js",
     "post": "node ./scripts/post-benchmarks.js",
-    "build": "npm run speed && npm run size && npm run post"
+    "build-all": "npm run speed && npm run size && npm run post"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -28,6 +30,7 @@
     "eslint": "^9.17.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
+    "gh-pages": "^6.2.0",
     "globals": "^15.14.0",
     "lz-string": "^1.5.0",
     "lzjs": "^1.3.1",
