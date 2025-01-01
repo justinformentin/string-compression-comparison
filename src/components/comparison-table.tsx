@@ -9,11 +9,13 @@ export function ComparisonTable({
   getFileName,
   getValue,
   flip,
+  ratio,
 }: {
   title: string
   getFileName?: (s: string) => string
   getValue: (item: any) => number
   flip?: boolean
+  ratio?: boolean
 }) {
   const [hiddenFuncs, setHiddenFuncs] = useState<string[]>([])
   const updateHiddenFuncs = (e: any, func: string) => {
@@ -72,13 +74,16 @@ export function ComparisonTable({
                       : 1 + ((value - min) / (max - min)) * (4 - 1)
 
                   const style = { background: computeColor(factor) }
+                  console.log('item', item)
                   return (
                     <td
                       style={style}
                       className="border border-gray-500 px-4 py-2"
                       key={item.name + getValue(item)}
                     >
-                      {value}
+                      <div>{value}</div>
+
+                      {ratio ? <div className="text-sm font-semibold">{`(${item.ratio}%)`}</div> : null}
                     </td>
                   )
                 })}

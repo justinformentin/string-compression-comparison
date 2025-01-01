@@ -6,7 +6,7 @@ function App() {
   const getSizeFileName = (n: keyof typeof fileSizes) => `${n} (${fileSizes?.[n]})`
 
   return (
-    <div className="overflow-auto px-8">
+    <div className="pb-8">
       <LibSizesTable />
       <ComparisonTable
         title="Compression Speed (ops/s)"
@@ -19,10 +19,11 @@ function App() {
         flip
       />
       <ComparisonTable
-        title="Size (in bytes)"
+        title="Size of output in bytes (% of input)"
+        getValue={(item) => item.compressedLength}
+        ratio
         // @ts-ignore
         getFileName={getSizeFileName}
-        getValue={(item) => item.compressedLength}
       />
     </div>
   )
