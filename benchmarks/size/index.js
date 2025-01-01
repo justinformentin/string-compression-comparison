@@ -1,5 +1,6 @@
 import fs from 'fs'
-import { funcs } from '../shared/funcs'
+import { funcs } from '../shared/funcs.js'
+import { data } from '../shared/data.js'
 
 const benchmarks = funcs
   .map((func) => {
@@ -19,6 +20,7 @@ const res = {}
 function benchmark(opts) {
   const length = opts.source.length
   const encoded = opts.compressFn(opts.source)
+
   const encodedLength = encoded.length
   const ratio = Math.floor((encodedLength / length) * 10000.0) / 100.0
   console.log(`${opts.title} - ${opts.compressionMethod}`)
@@ -39,7 +41,5 @@ benchmarks.forEach((b) => {
   benchmark(b)
 })
 
-console.log('res', res)
-
-const json = JSON.stringify(res) //convert it back to json
-fs.writeFile('./public/ratio.json', json, 'utf8', () => {}) // write it back
+const json = JSON.stringify(res)
+fs.writeFile('./public/size/ratio.json', json, 'utf8', () => { })

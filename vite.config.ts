@@ -1,9 +1,7 @@
 import { defineConfig } from 'vite'
-import { resolve } from 'path';
+import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
+// https://vite.dev/config/
 export default defineConfig({
-  build: { lib: { entry: resolve(__dirname, 'src/main.ts'), formats: ['es'] } },
-  resolve: { alias: { src: resolve('src/') } },
-  
-});
+  plugins: [react()],
+})

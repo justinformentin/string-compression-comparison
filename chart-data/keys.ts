@@ -1,0 +1,1 @@
+export const chartKeys = ["LZW-Map","LZW","LZJS","LZUTF8","LZUTF8_LIGHT","LZString","Compatto","SmolString"]
