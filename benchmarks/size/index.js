@@ -42,4 +42,4 @@ benchmarks.forEach((b) => {
 })
 
 const json = JSON.stringify(res)
-fs.writeFile('./public/size/ratio.json', json, 'utf8', () => { })
+fs.writeFile('./output/size/ratio.json', json, 'utf8', () => { })

@@ -13,7 +13,7 @@ export const handlers = (fileName) => {
     }),
     save({
         file: fileName,
-        folder: 'public/speed',
+        folder: 'output/speed',
         version: '1.0.0',
         details: true,
         format: 'chart.html',
@@ -27,7 +27,7 @@ export const handlers = (fileName) => {
       // }),
       save({
         file: fileName,
-        folder: 'public/speed',
+        folder: 'output/speed',
         version: '1.0.0',
       }),
   ]

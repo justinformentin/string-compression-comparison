@@ -1,7 +1,7 @@
 import fs from 'fs'
 const fsPromise = fs.promises
 
-const dir = './public'
+const dir = './output'
 
 
 function combineData(dataObj, resultsArray) {
