@@ -1,63 +1,63 @@
 {
   "name": "compress-large",
-  "date": "2024-12-31T20:02:29.204Z",
+  "date": "2025-01-02T03:02:29.175Z",
   "version": "1.0.0",
   "results": [
     {
       "name": "LZW-Map",
-      "ops": 34.21,
-      "margin": 1.15,
-      "percentSlower": 85.79
+      "ops": 4.31,
+      "margin": 134.92,
+      "percentSlower": 97.64
     },
     {
       "name": "LZW",
-      "ops": 33.27,
-      "margin": 2.27,
-      "percentSlower": 86.18
-    },
-    {
-      "name": "LZUTF8",
-      "ops": 116.89,
-      "margin": 1.58,
-      "percentSlower": 51.45
+      "ops": 5.33,
+      "margin": 187.29,
+      "percentSlower": 97.08
     },
     {
       "name": "LZJS",
-      "ops": 28.34,
-      "margin": 1.12,
-      "percentSlower": 88.23
+      "ops": 34.01,
+      "margin": 20.98,
+      "percentSlower": 81.36
+    },
+    {
+      "name": "LZUTF8",
+      "ops": 179.83,
+      "margin": 41.83,
+      "percentSlower": 1.45
     },
     {
       "name": "LZUTF8_LIGHT",
-      "ops": 109.14,
-      "margin": 1.3,
-      "percentSlower": 54.67
+      "ops": 182.48,
+      "margin": 28.07,
+      "percentSlower": 0
     },
     {
       "name": "LZString",
-      "ops": 30.81,
-      "margin": 1.52,
-      "percentSlower": 87.2
+      "ops": 27.09,
+      "margin": 5.35,
+      "percentSlower": 85.15
     },
     {
       "name": "Compatto",
-      "ops": 31.11,
-      "margin": 1.28,
-      "percentSlower": 87.08
+      "ops": 19.52,
+      "margin": 106.28,
+      "percentSlower": 89.3
     },
     {
       "name": "SmolString",
-      "ops": 240.76,
-      "margin": 0.63,
-      "percentSlower": 0
+      "ops": 52.53,
+      "margin": 3.11,
+      "percentSlower": 71.21
     }
   ],
   "fastest": {
-    "name": "SmolString",
-    "index": 7
+    "name": "LZUTF8_LIGHT",
+    "index": 4
   },
   "slowest": {
-    "name": "LZJS",
-    "index": 3
+    "name": "LZW-Map",
+    "index": 0
   }
 }

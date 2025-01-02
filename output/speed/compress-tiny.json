@@ -1,0 +1,63 @@
+{
+  "name": "compress-tiny",
+  "date": "2025-01-02T02:57:21.963Z",
+  "version": "1.0.0",
+  "results": [
+    {
+      "name": "LZW-Map",
+      "ops": 3424.8,
+      "margin": 0.81,
+      "percentSlower": 82.28
+    },
+    {
+      "name": "LZW",
+      "ops": 4573.48,
+      "margin": 0.48,
+      "percentSlower": 76.34
+    },
+    {
+      "name": "LZJS",
+      "ops": 4064.88,
+      "margin": 0.56,
+      "percentSlower": 78.97
+    },
+    {
+      "name": "LZUTF8",
+      "ops": 2598.26,
+      "margin": 5.66,
+      "percentSlower": 86.56
+    },
+    {
+      "name": "LZUTF8_LIGHT",
+      "ops": 5278.29,
+      "margin": 3.03,
+      "percentSlower": 72.7
+    },
+    {
+      "name": "LZString",
+      "ops": 3511.02,
+      "margin": 0.66,
+      "percentSlower": 81.84
+    },
+    {
+      "name": "Compatto",
+      "ops": 3298.56,
+      "margin": 1.02,
+      "percentSlower": 82.94
+    },
+    {
+      "name": "SmolString",
+      "ops": 19330.99,
+      "margin": 1.63,
+      "percentSlower": 0
+    }
+  ],
+  "fastest": {
+    "name": "SmolString",
+    "index": 7
+  },
+  "slowest": {
+    "name": "LZUTF8",
+    "index": 3
+  }
+}

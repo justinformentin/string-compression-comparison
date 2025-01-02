@@ -11,13 +11,13 @@ export const handlers = (fileName) => {
     complete((summary) => {
       /* your custom complete handling goes here */
     }),
-    save({
-        file: fileName,
-        folder: 'output/speed',
-        version: '1.0.0',
-        details: true,
-        format: 'chart.html',
-      }),
+    // save({
+    //     file: fileName,
+    //     folder: 'output/speed',
+    //     version: '1.0.0',
+    //     details: true,
+    //     format: 'chart.html',
+    //   }),
       // save({
       //   file: fileName,
       //   folder: 'public',

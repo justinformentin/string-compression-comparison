@@ -28,4 +28,5 @@ const runDecompress = ({ title, source }) =>
 data.forEach((s) => {
   runCompress(s)
   runDecompress(s)
+  process.exit();
 })

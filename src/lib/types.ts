@@ -1,7 +1,13 @@
+import { fileSizes } from '../../chart-data/file-sizes'
+import { chartKeys } from '../../chart-data/keys'
+
 export type ComparisonValueKey = 'compressedLength' | 'compress' | 'decompress'
 
+export type ChartKeys = (typeof chartKeys)[any]
+export type FileKeys = keyof typeof fileSizes
+
 export type ChartDataItem = {
-  name: string
+  name: ChartKeys
   compressedLength: number
   ratio: number
   equalOutput: boolean
@@ -11,6 +17,6 @@ export type ChartDataItem = {
 }
 
 export type ChartData = {
-  file: string
+  file: FileKeys
   items: ChartDataItem[]
 }[]

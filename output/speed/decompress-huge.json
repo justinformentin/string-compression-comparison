@@ -1,0 +1,63 @@
+{
+  "name": "decompress-huge",
+  "date": "2025-01-02T03:04:57.049Z",
+  "version": "1.0.0",
+  "results": [
+    {
+      "name": "LZW-Map",
+      "ops": 18.96,
+      "margin": 1.98,
+      "percentSlower": 96.17
+    },
+    {
+      "name": "LZW",
+      "ops": 494.72,
+      "margin": 14.31,
+      "percentSlower": 0
+    },
+    {
+      "name": "LZJS",
+      "ops": 13.27,
+      "margin": 1.55,
+      "percentSlower": 97.32
+    },
+    {
+      "name": "LZUTF8",
+      "ops": 132.06,
+      "margin": 106.3,
+      "percentSlower": 73.31
+    },
+    {
+      "name": "LZUTF8_LIGHT",
+      "ops": 216.73,
+      "margin": 84.94,
+      "percentSlower": 56.19
+    },
+    {
+      "name": "LZString",
+      "ops": 20.78,
+      "margin": 1.76,
+      "percentSlower": 95.8
+    },
+    {
+      "name": "Compatto",
+      "ops": 26.8,
+      "margin": 58.95,
+      "percentSlower": 94.58
+    },
+    {
+      "name": "SmolString",
+      "ops": 256.4,
+      "margin": 11.63,
+      "percentSlower": 48.17
+    }
+  ],
+  "fastest": {
+    "name": "LZW",
+    "index": 1
+  },
+  "slowest": {
+    "name": "LZJS",
+    "index": 2
+  }
+}

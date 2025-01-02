@@ -1,63 +1,63 @@
 {
   "name": "decompress-medium",
-  "date": "2024-12-31T20:01:45.474Z",
+  "date": "2025-01-02T03:01:32.913Z",
   "version": "1.0.0",
   "results": [
     {
       "name": "LZW-Map",
-      "ops": 534.75,
-      "margin": 0.81,
-      "percentSlower": 92.1
+      "ops": 113.56,
+      "margin": 4.62,
+      "percentSlower": 95.7
     },
     {
       "name": "LZW",
-      "ops": 6773.05,
-      "margin": 0.32,
-      "percentSlower": 0
-    },
-    {
-      "name": "LZUTF8",
-      "ops": 3007.97,
-      "margin": 0.63,
-      "percentSlower": 55.59
+      "ops": 595.85,
+      "margin": 46.79,
+      "percentSlower": 77.41
     },
     {
       "name": "LZJS",
-      "ops": 622.37,
-      "margin": 0.7,
-      "percentSlower": 90.81
+      "ops": 505.51,
+      "margin": 47.98,
+      "percentSlower": 80.84
+    },
+    {
+      "name": "LZUTF8",
+      "ops": 1531.26,
+      "margin": 128.75,
+      "percentSlower": 41.96
     },
     {
       "name": "LZUTF8_LIGHT",
-      "ops": 3007.43,
-      "margin": 0.69,
-      "percentSlower": 55.6
+      "ops": 2638.1,
+      "margin": 7.73,
+      "percentSlower": 0
     },
     {
       "name": "LZString",
-      "ops": 467.56,
-      "margin": 0.52,
-      "percentSlower": 93.1
+      "ops": 471.71,
+      "margin": 2.29,
+      "percentSlower": 82.12
     },
     {
       "name": "Compatto",
-      "ops": 1407.41,
-      "margin": 0.4,
-      "percentSlower": 79.22
+      "ops": 72.88,
+      "margin": 130.06,
+      "percentSlower": 97.24
     },
     {
       "name": "SmolString",
-      "ops": 147.72,
-      "margin": 4.55,
-      "percentSlower": 97.82
+      "ops": 661.72,
+      "margin": 1.79,
+      "percentSlower": 74.92
     }
   ],
   "fastest": {
-    "name": "LZW",
-    "index": 1
+    "name": "LZUTF8_LIGHT",
+    "index": 4
   },
   "slowest": {
-    "name": "SmolString",
-    "index": 7
+    "name": "Compatto",
+    "index": 6
   }
 }

@@ -77,15 +77,17 @@ function combineData(dataObj: typeof sizeData, resultsArray: SpeedData[]) {
 
 async function run() {
   const names = Object.keys(sizeData).map((k) => k)
-  const keys = `export const chartKeys = ` + JSON.stringify(names)
+  const keys = `
+import { ChartData } from "../src/lib/types";
+
+export const chartData: ChartData = ${JSON.stringify(names)} as const`
   fs.writeFile('./chart-data/keys.ts', keys, 'utf8', () => {})
 
   const files = await fsPromise.readdir(`${dir}/speed`)
 
   const speedData: SpeedData[] = []
   for (const file of files) {
-    const data = await fsPromise.readFile(`${dir}/speed/${file}`)
-    // @ts-ignore It is a string for our purposes, not Buffer<ArrayBufferLike>
+    const data = await fsPromise.readFile(`${dir}/speed/${file}`, 'utf8')
     const parsedSpeedData = JSON.parse(data)
     speedData.push(parsedSpeedData)
   }

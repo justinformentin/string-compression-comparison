@@ -10,13 +10,14 @@
     "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview",
-    "speed": "node ./benchmarks/speed/index.js",
-    "size": "node ./benchmarks/size/index.js",
-    "post": "node ./scripts/post-benchmarks.js",
-    "build-all": "npm run speed && npm run size && npm run post"
+    "speed": "bun run ./benchmarks/speed/index.ts",
+    "size": "bun run ./benchmarks/size/index.ts",
+    "post": "bun run ./scripts/post-benchmarks.ts",
+    "build-all": "bun run speed && bun run size && bun run post"
   },
   "dependencies": {
     "react": "^18.3.1",
+    "react-charts": "^3.0.0-beta.57",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
