@@ -1,50 +1,41 @@
-# React + TypeScript + Vite
+# String Compression Comparison
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repo is provided to show a comparison between string compression algorithms and libraries.
 
-Currently, two official plugins are available:
+[View the tables](https://justinformentin.github.io/string-compression-comparison/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Screenshot](/screenshot.jpg)
 
-## Expanding the ESLint configuration
+You can compare the compression speed, decompression speed, size of output, the size of the output as a percent of the input, and the library/algorithm size.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+You can uncheck individual libraries to remove them from the comparison.
 
-- Configure the top-level `parserOptions` property like this:
+Black cells mean the decompressed string does not match the original input string, so it is unusable.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Contributing
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Functions
+If you would like to add more functions, either include them in the [local-libs](/local-libs/) directory, or `npm install` them. And then add them to the list in the [/benchmarks/shared/funcs.ts](/benchmarks/shared/funcs.ts) file.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Data
+If you would like to add more test data, add it to the [data](/data/) directory. Then add them to the list in [/benchmarks/shared/data.ts](/benchmarks/shared/data.ts) file.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Run
+Run `npm run build-all` to run the scripts that get the compression and decompression stats, and then merges the data into a single file that is used on the frontend.
+
+## Why
+
+Read the full article here: [String Compression](https://justinformentin.com/string-compression)
+
+This started as a personal investigation for my notetaking app, [Knoat](https://knoat.com). I was looking into using the [Lexical](https://github.com/facebook/lexical) editor.
+
+But the output `.lexical` files are very large - multi-KB JSON for even a few lines of text.
+
+Someone else had already written a very good minifier - [Lexical Minifier](https://github.com/fedemartinm/lexical-minifier)
+
+But, seeing the result of the minifier, I thought there were still a lot of repeated characters, which lead me to compression. 
+
+## More
+
+If you're interested, you can read more about the [Huffman and Lempel-Ziv-Welch](https://web.mit.edu/6.02/www/s2012/handouts/3.pdf) compression algorithms, or [Lossless Compression](https://en.wikipedia.org/wiki/Lossless_compression) in general, with an interesting note on legal issues regarding the LZW algorithm.
+
