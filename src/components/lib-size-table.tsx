@@ -11,10 +11,11 @@ export function LibSizesTable() {
       <>
         <thead>
           <tr>
+            <th></th>
             {keys.map((key) => (
               <th
                 key={key}
-                className="text-sm border-x border-t border-gray-500 p-2 min-w-[120px]"
+                className="text-sm border-x border-t border-gray-500 p-2 px-[14px] min-w-[120px]"
               >
                 {key}
               </th>
@@ -23,6 +24,7 @@ export function LibSizesTable() {
         </thead>
         <tbody>
           <tr>
+            <th className="px-2 text-xs min-w-[139px]"></th>
             {keys.map((k, idx) => {
               return (
                 <td

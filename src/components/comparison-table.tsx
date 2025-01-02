@@ -1,22 +1,25 @@
 import { useState } from 'react'
 import { chartKeys } from '../../chart-data/keys'
-import { chartData } from '../../chart-data/chart-data'
-import { computeColor } from '../lib/compute-color'
+import { chartData } from '../../chart-data'
 import { Table } from './table'
+import { ComparisonValueKey } from '../lib/types'
+import { getColorRange } from '../lib/get-color-range'
+
+type ComparisonTableProps = {
+  title: string
+  valueKey: ComparisonValueKey
+  getFileName?: (s: string) => string
+  flip?: boolean
+  ratio?: boolean
+}
 
 export function ComparisonTable({
   title,
   getFileName,
-  getValue,
-  flip,
+  valueKey,
+  flip = false,
   ratio,
-}: {
-  title: string
-  getFileName?: (s: string) => string
-  getValue: (item: any) => number
-  flip?: boolean
-  ratio?: boolean
-}) {
+}: ComparisonTableProps) {
   const [hiddenFuncs, setHiddenFuncs] = useState<string[]>([])
   const updateHiddenFuncs = (e: any, func: string) => {
     !e.target.checked
@@ -49,14 +52,6 @@ export function ComparisonTable({
         </thead>
         <tbody>
           {chartData.map((d, idx) => {
-            const values = d.items
-              .filter((v) => !hiddenFuncs.includes(v.name))
-              .map((item) => getValue(item))
-
-            const tempMin = Math.min(...values)
-            const tempMax = Math.max(...values)
-            const min = flip ? tempMax : tempMin
-            const max = flip ? tempMin : tempMax
             return (
               <tr key={d.file + idx + title}>
                 <th className="border-y border-l border-gray-500 px-2 text-xs min-w-[139px]">
@@ -65,25 +60,32 @@ export function ComparisonTable({
                 {d.items.map((item) => {
                   if (hiddenFuncs.includes(item.name))
                     return <td className="border border-gray-500 px-4 py-2"></td>
-                  const value = getValue(item)
-                  const factor =
-                    value === min
-                      ? 1
-                      : value === max
-                      ? 4
-                      : 1 + ((value - min) / (max - min)) * (4 - 1)
+                    
+                  const value = item[valueKey]
 
-                  const style = { background: computeColor(factor) }
-                  console.log('item', item)
+                  const style = item.equalOutput
+                    ? {
+                        background: getColorRange({
+                          items: d.items,
+                          hiddenFuncs,
+                          value,
+                          valueKey,
+                          flip,
+                        }),
+                      }
+                    : { background: 'black', color: 'white' }
+
                   return (
                     <td
                       style={style}
                       className="border border-gray-500 px-4 py-2"
-                      key={item.name + getValue(item)}
+                      key={item.name + item[valueKey]}
                     >
                       <div>{value}</div>
 
-                      {ratio ? <div className="text-sm font-semibold">{`(${item.ratio}%)`}</div> : null}
+                      {ratio ? (
+                        <div className="text-sm font-semibold">{`(${item.ratio}%)`}</div>
+                      ) : null}
                     </td>
                   )
                 })}
