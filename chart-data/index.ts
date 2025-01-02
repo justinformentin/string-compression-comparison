@@ -1,4 +1,6 @@
-export const chartData = [
+import { ChartData } from "../src/lib/types";
+
+export const chartData: ChartData = [
     {
         "file": "tiny",
         "items": [
