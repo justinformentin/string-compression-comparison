@@ -1,4 +1,4 @@
-export const medium = `{
+{
     "editorState": {
       "root": {
         "children": [
@@ -657,4 +657,4 @@ export const medium = `{
     "lastSaved": 1735568300887,
     "source": "Playground",
     "version": "0.22.0"
-  }`
+  }

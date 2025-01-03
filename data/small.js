@@ -1,4 +1,4 @@
-export const small =`const createModule = require('./triangle.out');
+const createModule = require('./triangle.out');
 
 let Module = {};
 
@@ -61,32 +61,32 @@ const getSwitchesStr = (obj, input, vorout = null) => {
 	let str = '';
 
 	// PSLG by default
-	if (obj.pslg				!== false) 	str = \`\${str}p\;
+	// if (obj.pslg !== false) str = `\${str}p\;`
 	// zero-based by default
-	str = \`\${str}z\`;
+	str = `\${str}z`;
 	// is Voronoi
-	if (vorout 					!== null) 	str = \`\${str}v\`;
+	if (vorout !== null) 	str = `\${str}v`;
 	// quiet by default
-	if (obj.quiet				!== false) 	str = \`\${str}Q\`;
+	if (obj.quiet !== false) 	str = `\${str}Q`;
 
-	if (obj.refine 			=== true) 	str = \`\${str}r\`;
-	if (obj.regionAttr 	=== true) 	str = \`\${str}A\`;
-	if (obj.convexHull 	=== true) 	str = \`\${str}c\`;
-	if (obj.ccdt 				=== true) 	str = \`\${str}D\`;
-	if (obj.jettison		=== true) 	str = \`\${str}j\`;
-	if (obj.edges				=== true) 	str = \`\${str}e\`;
-	if (obj.neighbors		=== true) 	str = \`\${str}n\`;
-	if (obj.quadratic		=== true) 	str = \`\${str}o2\`;
-	if (obj.bndMarkers	=== false) 	str = \`\${str}B\`;
-	if (obj.holes				=== false) 	str = \`\${str}O\`;
+	if (obj.refine === true) 	str = `\${str}r`;
+	if (obj.regionAttr 	=== true) 	str = `\${str}A`;
+	if (obj.convexHull 	=== true) 	str = `\${str}c`;
+	if (obj.ccdt === true) 	str = `\${str}D`;
+	if (obj.jettison === true) 	str = `\${str}j`;
+	if (obj.edges === true) 	str = `\${str}e`;
+	if (obj.neighbors === true) 	str = `\${str}n`;
+	if (obj.quadratic === true) 	str = `\${str}o2`;
+	if (obj.bndMarkers	=== false) 	str = `\${str}B`;
+	if (obj.holes === false) 	str = `\${str}O`;
 
-	if (typeof obj.steiner === 'number') 	str = \`\${str}S\${obj.steiner}\`;
+	if (typeof obj.steiner === 'number') str = `\${str}S\${obj.steiner}`;
 
-	if (typeof obj.quality === 'number') 	str = \`\${str}q\${obj.quality}\`;
-	else if (obj.quality === true) 				str = \`\${str}q\`;
+	if (typeof obj.quality === 'number') str = `\${str}q\${obj.quality}`;
+	else if (obj.quality === true) str = `\${str}q`;
 
-	if (typeof obj.area === 'number') 		str = \`\${str}a\${obj.area}\`;
-	else if (obj.area === true) 					str = \`\${str}a\`;
+	if (typeof obj.area === 'number') str = `\${str}a\${obj.area}`;
+	else if (obj.area === true) str = `\${str}a`;
 
 	// log switches if !quiet
 	if (obj.quiet === false) console.log('Switches:', str);
@@ -390,4 +390,3 @@ module.exports = {
 	freeIO,
 	getSwitchesStr,
 };
-`

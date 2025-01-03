@@ -1,0 +1,42 @@
+[
+    {
+        "name": "LZW-Map",
+        "minified": "2kb",
+        "gzip": ""
+    },
+    {
+        "name": "LZW",
+        "minified": "2kb",
+        "gzip": ""
+    },
+    {
+        "name": "LZ-String",
+        "minified": "15kb",
+        "gzip": ""
+    },
+    {
+        "name": "compatto",
+        "minified": "2.7kb",
+        "gzip": "1.3kb"
+    },
+    {
+        "name": "lzjs",
+        "minified": "9.4kb",
+        "gzip": "3.4kb"
+    },
+    {
+        "name": "lzutf8",
+        "minified": "110.8kb",
+        "gzip": "31.7kb"
+    },
+    {
+        "name": "lzutf8-light",
+        "minified": "28.4kb",
+        "gzip": "7.9kb"
+    },
+    {
+        "name": "smol-string",
+        "minified": "14kb",
+        "gzip": ""
+    }
+]

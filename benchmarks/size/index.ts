@@ -1,5 +1,19 @@
 import fs from 'fs'
-import { benchmarks } from '../shared/benchmarks'
+import { funcs } from '../shared/funcs'
+import { data } from '../shared/data'
+
+export const benchmarks = funcs
+  .map((func) =>
+    data.map((d) => ({
+      title: d.title,
+      source: d.source,
+      compressionMethod: func.title,
+      compressFn: func.encode,
+      decompressFn: func.decode,
+    })),
+  )
+  .flat()
+
 
 const res = {}
 
@@ -21,6 +35,7 @@ function benchmark(opts) {
 
   return encodedLength
 }
+
 
 function run() {
   benchmarks.forEach((b) => {

@@ -1,4 +1,4 @@
-export const large = `[
+[
   {
     "name": "Adeel Solangi",
     "language": "Sindhi",
@@ -1378,4 +1378,4 @@ export const large = `[
     "bio": "Maecenas tempus neque ut porttitor malesuada. Phasellus massa ligula, hendrerit eget efficitur eget, tincidunt in ligula. Quisque mauris ligula, efficitur porttitor sodales ac, lacinia non ex. Maecenas quis nisi nunc.",
     "version": 2.69
   }
-]`
+]

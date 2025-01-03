@@ -12,8 +12,9 @@
     "preview": "vite preview",
     "speed": "bun run ./benchmarks/speed/index.ts",
     "size": "bun run ./benchmarks/size/index.ts",
+    "pre": "bun run ./scripts/pre-benchmarks.ts",
     "post": "bun run ./scripts/post-benchmarks.ts",
-    "build-all": "bun run speed && bun run size && bun run post"
+    "build-all": "bun run pre && bun run speed && bun run size && bun run post"
   },
   "dependencies": {
     "react": "^18.3.1",
